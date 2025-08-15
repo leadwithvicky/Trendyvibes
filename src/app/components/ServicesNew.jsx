@@ -9,7 +9,7 @@ export default function ServicesNew() {
     {
       icon: "/seoico.png",
       title: "SEO Services",
-      short: "Built for search, shaped for dominance—we make your brand unmissable.",
+      short: "Built for search, shaped for dominance we make your brand unmissable.",
       details: [
         "Comprehensive keyword research targeting high-intent searchers.",
         "Technical SEO audit & implementation (site speed, schema, crawlability).",
@@ -23,7 +23,7 @@ export default function ServicesNew() {
     {
       icon: "/paidico.png",
       title: "Paid Advertising",
-      short: "We engineer every ad to ignite action—sharp, strategic, built for instant impact.",
+      short: "We engineer every ad to ignite action sharp and built for instant impact.",
       details: [
         "Audience segmentation and intent-based targeting.",
         "Creative testing (copy + visual) with multivariate experimentation.",
@@ -95,7 +95,9 @@ export default function ServicesNew() {
   return (
     <section
       className="text-white py-20 px-6 bg-cover bg-center bg-no-repeat"
-      style={{ backgroundImage: "url('/whybg.jpg')" }}
+      style={{ backgroundImage: "url('/whybg.jpg')" ,
+        // animation: "bgZoom 6s ease-in-out infinite alternate",
+      }}
     >
       <div className="max-w-6xl mx-auto">
         {/* Header */}
@@ -116,7 +118,10 @@ export default function ServicesNew() {
                 onClick={() => setActiveIndex(null)}
                 className="absolute top-4 right-4 text-sm px-3 py-1 bg-gray-800 rounded-full hover:bg-gray-700 transition"
               >
-                Close
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M6 18 18 6M6 6l12 12" />
+                </svg>
+                
               </button>
               <div className="flex flex-col md:flex-row gap-8">
                 <div className="flex-shrink-0">

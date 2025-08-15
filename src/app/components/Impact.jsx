@@ -23,8 +23,11 @@ export default function Impact() {
 
   return (
     <section 
-      className="text-white py-20 px-6 bg-cover bg-center bg-no-repeat"
-      style={{ backgroundImage: "url('/whybg.jpg')" }}
+      className="text-white py-20 px-6 bg-cover bg-center" 
+      style={{
+        backgroundColor: "#F5EFFF"
+        // animation: "bgZoom 6s ease-in-out infinite alternate",
+       }}
     >
       <div className="max-w-6xl mx-auto">
         {/* Video Section */}

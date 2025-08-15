@@ -38,9 +38,11 @@ export default function Resources() {
 
   return (
     <section 
-      id="resources" 
-      className="min-h-screen bg-gradient-to-br from-gray-900 via-purple-900 to-black text-white py-20 px-6"
-    >
+    className="text-white py-20 px-6 bg-cover bg-center bg-no-repeat"
+    style={{ backgroundImage: "url('/whybg.jpg')",
+      // animation: "bgZoom 6s ease-in-out infinite alternate",
+     }}
+  >
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold mb-6">Resources</h2>

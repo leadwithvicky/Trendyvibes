@@ -38,6 +38,21 @@ const whyChoose = [
   "24/7 support and monitoring"
 ];
 
+const testimonials = [
+  {
+    quote: "Trendy Vibes transformed our digital presence completely. ROI increased by 300% in just 6 months!",
+    author: "Sarah Johnson",
+    // company: "TechStart Inc.",
+    rating: "⭐⭐⭐⭐⭐"
+  },
+  {
+    quote: "Professional and results-driven. They delivered beyond our expectations.",
+    author: "Mike Chen",
+    // company: "GrowthLab",
+    rating: "⭐⭐⭐⭐⭐"
+  }
+];
+
 const ContactCard = ({ icon, title, main, subtitle, button }) => (
   <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 border border-white/20 hover:border-white/40 transition-all duration-500 transform hover:scale-110 hover:shadow-2xl hover:shadow-yellow-500/30 flex flex-col group">
     <div className="text-4xl mb-4 transition-transform duration-300 group-hover:scale-125">{icon}</div>
@@ -65,7 +80,10 @@ const Field = ({ label, as, children, ...props }) => (
     ) : as === 'select' ? (
       <select
         {...props}
-        className="w-full bg-white/20 border border-white/30 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-blue-400 transition-all duration-300"
+        className="w-full bg-white/20 border border-white/30 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-blue-400 transition-all duration-300 [&>option]:bg-gray-800 [&>option]:text-white [&>option]:py-2"
+        style={{
+          colorScheme: 'dark'
+        }}
       >
         {children}
       </select>
@@ -131,9 +149,6 @@ export default function LetsTalk() {
          >
            <div className="bg-black/30 backdrop-blur-sm rounded-3xl p-8 h-full">
             <div className="grid lg:grid-cols-2 gap-12">
-              {/* Illustration placeholder */}
-             
-
               {/* Form */}
               <div>
                 <h3 className="text-3xl font-bold mb-6">Get In Touch</h3>
@@ -175,11 +190,11 @@ export default function LetsTalk() {
                       value={formData.budget}
                       onChange={handleInputChange}
                     >
-                      <option value="">Select budget range</option>
-                      <option value="5k-10k">$5K - $10K</option>
-                      <option value="10k-25k">$10K - $25K</option>
-                      <option value="25k-50k">$25K - $50K</option>
-                      <option value="50k+">$50K+</option>
+                      <option value="" className="bg-gray-800 text-white">Select budget range</option>
+                      <option value="5k-10k" className="bg-gray-800 text-white">$5K - $10K</option>
+                      <option value="10k-25k" className="bg-gray-800 text-white">$10K - $25K</option>
+                      <option value="25k-50k" className="bg-gray-800 text-white">$25K - $50K</option>
+                      <option value="50k+" className="bg-gray-800 text-white">$50K+</option>
                     </Field>
                   </div>
 
@@ -190,7 +205,7 @@ export default function LetsTalk() {
                     value={formData.message}
                     onChange={handleInputChange}
                     placeholder="Tell us about your project..."
-                    rows={4}
+                    rows={5}
                     required
                   />
 
@@ -201,6 +216,79 @@ export default function LetsTalk() {
                     Send Message
                   </button>
                 </form>
+              </div>
+
+              {/* Right Side Content */}
+              <div className="space-y-8">
+                {/* Quick Contact */}
+                {/* <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 border border-white/20">
+                  <h4 className="text-2xl font-bold mb-4 text-yellow-400">Quick Contact</h4>
+                  <div className="space-y-4">
+                    <div className="flex items-center gap-3">
+                      <div className="text-2xl">📧</div>
+                      <div>
+                        <p className="font-semibold">hello@trendyvibes.com</p>
+                        <p className="text-sm text-gray-300">24/7 support</p>
+                      </div>
+                    </div>
+                    <div className="flex items-center gap-3">
+                      <div className="text-2xl">📞</div>
+                      <div>
+                        <p className="font-semibold">+1 (555) 123-4567</p>
+                        <p className="text-sm text-gray-300">Mon-Fri, 9AM-6PM</p>
+                      </div>
+                    </div>
+                    <div className="flex items-center gap-3">
+                      <div className="text-2xl">📍</div>
+                      <div>
+                        <p className="font-semibold">Cyber Towers, HITEC City</p>
+                        <p className="text-sm text-gray-300">Hyderabad, India</p>
+                      </div>
+                    </div>
+                  </div>
+                </div> */}
+
+                {/* Testimonials */}
+                <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 border border-white/20">
+                  <h4 className="text-2xl font-bold mb-4 text-yellow-400">What Clients Say</h4>
+                  <div className="space-y-4">
+                    {testimonials.map((testimonial, index) => (
+                      <div key={index} className="border-l-4 border-yellow-400 pl-4">
+                        <p className="text-sm italic mb-2">"{testimonial.quote}"</p>
+                        <div className="flex items-center justify-between">
+                          <div>
+                            <p className="font-semibold text-sm">{testimonial.author}</p>
+                            <p className="text-xs text-gray-300">{testimonial.company}</p>
+                          </div>
+                          <div className="text-yellow-400">{testimonial.rating}</div>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+
+                {/* Stats */}
+                <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 border border-white/20">
+                  <h4 className="text-xl font-bold mb-4 text-yellow-400">Our Impact</h4>
+                  <div className="grid grid-cols-2 gap-4">
+                    <div className="text-center">
+                      <div className="text-xl font-bold text-blue-400">300%</div>
+                      <div className="text-sm text-gray-300">Avg. ROI Increase</div>
+                    </div>
+                    <div className="text-center">
+                      <div className="text-xl font-bold text-purple-400">50+</div>
+                      <div className="text-sm text-gray-300">Projects Completed</div>
+                    </div>
+                    <div className="text-center">
+                      <div className="text-xl font-bold text-green-400">98%</div>
+                      <div className="text-sm text-gray-300">Client Satisfaction</div>
+                    </div>
+                    <div className="text-center">
+                      <div className="text-xl font-bold text-yellow-400">24/7</div>
+                      <div className="text-sm text-gray-300">Support Available</div>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>

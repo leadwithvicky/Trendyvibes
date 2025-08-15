@@ -3,9 +3,10 @@
 export default function HeroSection() {
     return (
       <section
-        className="relative min-h-screen flex flex-col items-center justify-center text-white px-6 text-center bg-cover bg-center"
+        className="relative min-h-screen flex flex-col items-center justify-center text-white px-6 text-center bg-cover bg-center overflow-hidden"
         style={{
           backgroundImage: "url('herobg.jpg')", // <-- Replace with your uploaded image path
+          animation: "bgZoom 6s ease-in-out infinite alternate",
         }}
       >
         {/* Overlay */}

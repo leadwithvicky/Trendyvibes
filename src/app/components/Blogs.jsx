@@ -89,12 +89,12 @@ export default function Blogs() {
           <h2 className="text-2xl font-bold text-yellow-400 mb-4">More Articles Coming Soon</h2>
           <p className="text-gray-300 max-w-2xl mx-auto">
             We're constantly creating fresh content to keep you ahead of the curve. 
-            Subscribe to our newsletter to be notified when new articles are published.
+            {/* Subscribe to our newsletter to be notified when new articles are published. */}
           </p>
           <div className="mt-8">
-            <button className="bg-gradient-to-r from-yellow-500 to-orange-500 hover:from-yellow-600 hover:to-orange-600 text-black px-8 py-3 rounded-lg font-semibold transition-all duration-300 transform hover:scale-105">
+            {/* <button className="bg-gradient-to-r from-yellow-500 to-orange-500 hover:from-yellow-600 hover:to-orange-600 text-black px-8 py-3 rounded-lg font-semibold transition-all duration-300 transform hover:scale-105">
               Subscribe to Newsletter
-            </button>
+            </button> */}
           </div>
         </div>
       </div>
